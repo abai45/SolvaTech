@@ -6,23 +6,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
-@Table(name = "t_limits")
+@Table(name = "t_accounts")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class LimitEntity {
+public class AccountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    @JoinColumn(name = "account_id", nullable = false)
-    private AccountEntity account;
-    private BigDecimal limitSum;
-    private LocalDateTime limitDate;
-    private String limitCurrency;
+    private String accountName;
+    @OneToMany(mappedBy = "accountFrom")
+    private List<TransactionsEntity> transactions;
+    @OneToMany(mappedBy = "limits")
+    private List<LimitEntity> limit;
 }

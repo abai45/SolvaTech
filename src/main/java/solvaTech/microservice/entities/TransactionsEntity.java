@@ -20,11 +20,15 @@ public class TransactionsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String accountFrom;
+    @ManyToOne
+    @JoinColumn(name = "account_id", nullable = false)
+    private AccountEntity accountFrom;
     private String accountTo;
     private BigDecimal amount;
     private String currency;
     private LocalDateTime dateTime;
+
     private boolean limitExceeded;
+
     private CategoryEnum categoryEnum;
 }
