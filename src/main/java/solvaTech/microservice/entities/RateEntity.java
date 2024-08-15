@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "t_rateExchange")
 @Getter
@@ -16,5 +18,7 @@ public class RateEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private
+    private String currFrom;
+    private String currTo;
+    private BigDecimal rate;
 }
