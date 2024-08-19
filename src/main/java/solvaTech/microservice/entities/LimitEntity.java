@@ -1,10 +1,8 @@
 package solvaTech.microservice.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import solvaTech.microservice.enums.CategoryEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -13,16 +11,18 @@ import java.time.LocalDateTime;
 @Table(name = "t_limits")
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class LimitEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    @JoinColumn(name = "account_id", nullable = false)
-    private AccountEntity account;
+    @Column(nullable = false, updatable = false)
     private BigDecimal limitSum;
+    @Column(nullable = false, updatable = false)
     private LocalDateTime limitDate;
     private String limitCurrency;
+    @Enumerated(EnumType.STRING)
+    private CategoryEnum categoryEnum;
 }
