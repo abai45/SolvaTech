@@ -3,15 +3,11 @@ package solvaTech.microservice.services.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import solvaTech.microservice.dtos.LimitDto;
-import solvaTech.microservice.entities.LimitEntity;
-import solvaTech.microservice.enums.CategoryEnum;
 import solvaTech.microservice.repositories.LimitRepository;
 import solvaTech.microservice.services.LimitService;
 
 import java.math.BigDecimal;
 import java.util.List;
-
-import static java.time.LocalDateTime.now;
 
 @Service
 @RequiredArgsConstructor
@@ -20,7 +16,7 @@ public class LimitServiceImpl implements LimitService {
 
     @Override
     public LimitDto setLimit(String categoryName, BigDecimal newLimit) {
-
+        return null;
     }
 
     @Override

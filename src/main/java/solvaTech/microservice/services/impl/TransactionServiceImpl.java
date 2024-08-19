@@ -13,13 +13,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TransactionServiceImpl implements TransactionService {
     private final TransactionsRepository transactionsRepository;
+
     @Override
     public TransactionDto doTransaction(String accountName, String accountTo, BigDecimal amount) {
         return null;
     }
 
     @Override
-    public List<TransactionDto> getTransactions(String accountName) {
+    public List<TransactionDto> getTransactionsExceededLimit() {
         return null;
     }
 }

@@ -1,5 +1,8 @@
 package solvaTech.microservice.services;
 
-public interface RateService {
+import solvaTech.microservice.dtos.RateDto;
 
+public interface RateService {
+    RateDto getRate(String fromCurrency, String toCurrency);
+    void fetchAndStoreDailyRates();
 }

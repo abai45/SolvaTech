@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface TransactionService {
     TransactionDto doTransaction(String accountName, String accountTo, BigDecimal amount);
-    List<TransactionDto> getTransactions(String accountName);
+    List<TransactionDto> getTransactionsExceededLimit();
+
 }
