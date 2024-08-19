@@ -6,6 +6,6 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface LimitService {
-    LimitDto setLimit(String categoryName, BigDecimal newLimit);
+    LimitDto setLimit(String categoryName, String currency, BigDecimal newLimit);
     List<LimitDto> getAllLimits();
 }

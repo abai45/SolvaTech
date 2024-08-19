@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import solvaTech.microservice.entities.LimitEntity;
 
 @Repository
-public interface LimitRepository extends JpaRepository<Long, LimitEntity> {
+public interface LimitRepository extends JpaRepository<LimitEntity, Long> {
 }

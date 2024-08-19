@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import solvaTech.microservice.entities.RateEntity;
 
 @Repository
-public interface RateRepository extends JpaRepository<Long, RateEntity> {
+public interface RateRepository extends JpaRepository<RateEntity, Long> {
 }
