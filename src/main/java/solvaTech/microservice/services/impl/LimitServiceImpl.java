@@ -47,13 +47,14 @@ public class LimitServiceImpl implements LimitService {
     @Override
     public List<LimitDto> getLimitsByCategoryAndDate(String categoryName, LocalDateTime date) {
         var limits = limitRepository.findAll(); /* <-- Можно использовать фильтрацию через методы в репозитории,
-                                                                 но я решил, что так веселее будет (: */
+                                                                но я решил, что так веселее будет (: */
         return  limits.stream()
                 .filter(limit ->
                         (categoryName == null || limit.getCategoryEnum().name().equalsIgnoreCase(categoryName)) &&
                         (date == null || limit.getLimitDate().toLocalDate().equals(date.toLocalDate()))
                 ).map(limitMapper::toDto)
                 .collect(Collectors.toList());
-        /* Надеюсь вы не подумаете, что это извращение. Я просто решил попробовать какой то такой метод сделать */
+        /* Надеюсь вы не подумаете, что это извращение. Понимаю, что при реальном проекте метод будет обрабатывать огромное
+        * количество данных, но для "не боевого" проекта решил, что веселее было бы сделать метод так */
     }
 }

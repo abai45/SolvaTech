@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LimitDto {
+    private String categoryName;
+    private String limitCurrency;
     private BigDecimal limitSum;
     private LocalDateTime limitDate;
-    private String limitCurrency;
-    private String categoryEnum;
 }
