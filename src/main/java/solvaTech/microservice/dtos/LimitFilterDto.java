@@ -4,17 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class LimitDto {
-    private BigDecimal limitSum;
-    private LocalDateTime limitDate;
-    private String limitCurrency;
-    private String categoryEnum;
+public class LimitFilterDto {
+    private String categoryName;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private LocalDateTime date;
 }
