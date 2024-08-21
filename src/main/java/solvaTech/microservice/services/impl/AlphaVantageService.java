@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 public class AlphaVantageService {
 
     private static final String BASE_URL = "https://www.alphavantage.co/query";
-    private static final String API_KEY = "***";
+    private static final String API_KEY = "****";
 
     private final RestTemplate restTemplate;
 
